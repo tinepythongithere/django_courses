@@ -13,7 +13,10 @@ def list_articles(request):
     articles = Article.objects.all()
     auteurs = Auteur.objects.all()
 
-    articles_filtre = None
+    if request.session['auteur_selected'] is not None:
+        articles_filtre = Article.objects.filter(auteur=Auteur.objects.get(id=request.session['auteur_selected']))
+    else:
+        articles_filtre = None
 
     if 'listes_auteur' in request.POST:
         request.session['auteur_selected'] = int(request.POST.get('listes_auteur'))
