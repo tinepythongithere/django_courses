@@ -1,0 +1,40 @@
+{% extends "firstapp/base.html" %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+    <h1>Liste des articles !!!</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.titre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Liste des auteurs</h1>
+    <form method="post">
+        {% csrf_token %}
+        <select name="listes_auteur" onchange="this.form.submit()">
+            {% for auteur in auteurs %}
+                <option value="{{ auteur.id }}" {% if request.session.auteur_selected == auteur.id %}selected{% endif %}>{{ auteur.prenom }} {{ auteur.nom }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <table>
+            <tr>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Date de publucation</th>
+                <th>Auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles_filtre %}
+                <tr>
+                    <td>{{ article.titre }}</td>
+                    <td>{{ article.contenu }}</td>
+                    <td>{{ article.date_publication|date:"D/M/Y" }}</td>
+                    <td>{{ article.auteur.prenom }} {{ article.auteur.nom|upper }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
