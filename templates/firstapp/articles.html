@@ -4,7 +4,7 @@
     <h1>Liste des articles !!!</h1>
     <ul>
         {% for article in articles %}
-            <li>{{ article.titre }}</li>
+            <li>{{ article.titre }} <a href="{% url 'firstapp:details' article.id %}">Voir détail</a></li>
         {% endfor %}
     </ul>
 
