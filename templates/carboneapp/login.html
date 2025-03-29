@@ -1,0 +1,25 @@
+{% extends 'carboneapp/base.html'%}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            <label for="username" class="form-label">Email</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" name="login_submit" class="form-button">
+        </form>
+
+        {% if messages %}
+            <div class="flash-message">
+                {% for message in messages %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock%}

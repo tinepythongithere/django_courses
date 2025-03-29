@@ -13,9 +13,10 @@ def list_articles(request):
     articles = Article.objects.all()
     auteurs = Auteur.objects.all()
 
-    if request.session['auteur_selected'] is not None:
-        articles_filtre = Article.objects.filter(auteur=Auteur.objects.get(id=request.session['auteur_selected']))
-    else:
+    try:
+        if request.session['auteur_selected'] is not None:
+            articles_filtre = Article.objects.filter(auteur=Auteur.objects.get(id=request.session['auteur_selected']))
+    except:
         articles_filtre = None
 
     if 'listes_auteur' in request.POST:
@@ -28,7 +29,8 @@ def list_articles(request):
 
 def details_article(request, id_article):
 
-    article = Article.objects.get(id=id_article)
-    #article = get_object_or_404(Article, id=id_article)
+    #article = Article.objects.get(id=id_article)
+    article = get_object_or_404(Article, id=id_article)
     context = {'art': article}
     return render(request, 'firstapp/details_articles.html', context=context)
+

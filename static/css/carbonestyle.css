@@ -1,0 +1,378 @@
+/* Styles CSS pour le thème vert, blanc et noir */
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0; /* Gris clair pour le fond général */
+    color: #333; /* Gris foncé pour le texte */
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+header {
+    background: #2E8B57; /* Vert forêt pour l'en-tête */
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #8FBC8F 3px solid; /* Vert plus clair pour la bordure */
+}
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding {
+    float: left;
+}
+header #branding h1 {
+    margin: 0;
+}
+nav {
+    float: right;
+    margin-top: 10px;
+}
+nav li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+nav a:hover {
+    color: #000000; /* Noir au survol */
+}
+#content {
+    background: #ffffff; /* Blanc pour le contenu principal */
+    padding: 20px;
+    min-height: 400px;
+}
+footer {
+    background: #2E8B57; /* Vert forêt pour le pied de page */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+/* Styles spécifiques aux formulaires */
+form {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+button {
+    background: #333; /* Gris foncé pour les boutons */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation pour les titres */
+#content h2, #content h3 {
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ======================================= home style ====================================*/
+
+/* Styles pour home.html */
+
+#content {
+    background: #f8f8f8; /* Légèrement plus clair que le fond général */
+    padding: 40px;
+}
+
+#content h2 {
+    color: #2E8B57; /* Vert forêt pour le titre principal */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#content p {
+    font-size: 1.1em;
+    color: #555; /* Gris plus clair pour le texte */
+    margin-bottom: 30px;
+
+}
+
+#content h3 {
+    color: #333; /* Gris foncé pour les titres des rubriques */
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2E8B57; /* Ligne sous les titres des rubriques */
+    padding-bottom: 10px;
+}
+
+#content ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mise en grille responsive */
+    grid-gap: 30px;
+}
+
+#content ul li {
+    background: #fff; /* Blanc pour les cartes des rubriques */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Légère ombre */
+    transition: transform 0.2s ease-in-out; /* Animation au survol */
+}
+
+#content ul li:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    border-color: green;
+}
+
+#content ul li a {
+    color: #2E8B57; /* Vert forêt pour les liens */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#content ul li p {
+    font-size: 1em;
+    color: #777;
+    text-align: left; /* Réinitialise l'alignement du paragraphe dans les cartes */
+}
+
+#content ul li a i {
+    margin-right: 10px; /* Ajoute un espace entre l'icône et le texte */
+}
+
+/* =================Styles pour le formulaire d'énergie ========================*/
+.energy-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-group input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-group .radio-label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.form-group .form-errors {
+    color: #1a1818;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+#content .form-group ul li {
+    background: #e91a1a;
+}
+
+.energy-form button[type="submit"] {
+    background: #2E8B57; /* Vert forêt pour le bouton */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.energy-form button[type="submit"]:hover {
+    background-color: #8FBC8F; /* Vert plus clair au survol */
+}
+
+.energy-form .form-group p {
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+/* ==========================Styles de base pour les tableaux ============================*/
+table {
+    width: 100%; /* Le tableau prend toute la largeur disponible */
+    border-collapse: collapse; /* Fusionne les bordures des cellules */
+    margin-bottom: 20px; /* Espacement sous le tableau */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Bordure grise pour les cellules */
+    padding: 8px; /* Espacement intérieur des cellules */
+    text-align: left; /* Alignement du texte à gauche par défaut */
+}
+
+/* Style pour l'en-tête du tableau */
+thead {
+    background-color: #2E8B57; /* Vert forêt pour l'en-tête */
+    color: white; /* Texte blanc pour l'en-tête */
+}
+
+
+/* Style pour les lignes paires du corps du tableau */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris clair pour les lignes paires */
+}
+
+/* Style au survol des lignes du corps du tableau */
+tbody tr:hover {
+    background-color: #ddd; /* Gris plus foncé au survol */
+}
+
+/* Style pour les bordures du tableau */
+table, th, td {
+    border: 1px solid #333; /* Bordure gris foncé pour le tableau et ses cellules */
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-link i {
+    margin-right: 8px;
+}
+
+.btn-link:hover {
+    background-color: #c0392b;
+}
+
+/* ========================Styles pour la page de connexion======================== */
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    margin: 50px auto;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container .error {
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+.login-container .form-group {
+    margin-bottom: 15px;
+}
+
+.login-container .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-container .form-button {
+    background: #2E8B57; /* Vert forêt pour le bouton */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top : 5px;
+}
+
+.login-container .form-button:hover {
+    background-color: #8FBC8F; /* Vert plus clair au survol */
+}

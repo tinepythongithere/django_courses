@@ -1,0 +1,29 @@
+{% extends "carboneapp/base.html" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block content %}
+    <h2>Bienvenue sur la plateforme dédié à ...</h2>
+    <p style="text-align: center">Veuillez selectionner un questionnaire pour commencer.</p>
+
+    <ul>
+        <li>
+            <a href="#"><i class="fas fa-lightbulb"></i> Consommation d'Énergie</a>
+            <p>Ce questionnaire concerne votre consommation d'électricité, de gaz, de chauffage, etc.</p>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-car"></i> Déplacement/Transports</a>
+            <p>Ce questionnaire concerne les déplacements de vos employés, l'utilisation de véhicules d'entreprise, etc.</p>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-trash"></i> Gestion des Déchets</a>
+            <p>Ce questionnaire concerne la production, le tri et le traitement de vos déchets.</p>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Achats et Locations</a>
+            <p>Ce questionnaire concerne l'impact carbone des produits et services que vous achetez.</p>
+        </li>
+    </ul>
+{% endblock %}
