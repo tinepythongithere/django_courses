@@ -1,0 +1,16 @@
+{% extends 'carboneapp/base.html'%}
+
+{% block title %}Energy-form{% endblock %}
+
+{% block content %}
+    <h3>Questionnaire energie</h3>
+    <form method="post" class="energy-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+
+        <button type="submit">Soumettre</button>
+
+    </form>
+{% endblock %}

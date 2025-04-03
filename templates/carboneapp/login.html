@@ -13,13 +13,5 @@
             <input type="password" id="password" name="password" required>
             <input type="submit" name="login_submit" class="form-button">
         </form>
-
-        {% if messages %}
-            <div class="flash-message">
-                {% for message in messages %}
-                    <p class="alert alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
     </div>
 {% endblock%}
