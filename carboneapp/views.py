@@ -3,7 +3,20 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import QuestionnaireEnergieForm
 from .models import QuestionnaireEnergie
+from .utils import group_required
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 
+
+def profile_required(view_func):
+    def wrapper(request, *args, **kwargs):
+        if request.user.groups.filter(name="user_carbon").exists():
+            return view_func(request, *args, **kwargs)
+        raise PermissionDenied
+    return wrapper
+
+@login_required
+@group_required('user_carbone')
 def home(request):
 
     return render(request, 'carboneapp/home.html')
@@ -23,11 +36,14 @@ def login_view(request):
             messages.error(request, 'User introuvable')
     return render(request, 'carboneapp/login.html')
 
+
 def logout_view(request):
     logout(request)
 
     return redirect('carboneapp:login')
 
+@login_required
+@profile_required
 def questionnaire_energie(request):
     energy_model = QuestionnaireEnergie.objects.filter(entite=request.user).first()
 
